@@ -1,5 +1,7 @@
+import { innerHeightFn } from "./window";
+
 export function doubleUserAge() {
-  const userAge = localStorage.getItem("userAge");
+  const userAge = innerHeightFn();
   return Number(userAge) * 2;
 }
 

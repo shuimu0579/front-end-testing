@@ -1,6 +1,12 @@
 import { vi, it, expect } from "vitest";
 import { doubleInnerWidth, doubleUserAge } from "./user";
 
+vi.mock("./window.ts", () => {
+  return {
+    innerHeightFn: () => 18,
+  };
+});
+
 it("doubleUserAge", () => {
   const r = doubleUserAge();
 
@@ -15,5 +21,3 @@ it("double innerWidth", () => {
 
   expect(r).toBe(400);
 });
-
-
